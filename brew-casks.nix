@@ -28,10 +28,15 @@ in
     "claude"
     "drawio"
 
+    "jetbrains-toolbox"
+    "cursor"
+
     "microsoft-teams"
 
     "deezer"
     "spotify"
+    "vlc"
+    "handbrake"
 
     "affinity-photo"
     "affinity-designer"
