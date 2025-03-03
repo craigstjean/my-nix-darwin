@@ -58,11 +58,11 @@
       modules = [
         configuration
         ./brew-casks.nix
-	home-manager.darwinModules.home-manager {
-	  home-manager.useGlobalPkgs = false;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.craig = import ./home.nix;
-	}
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = false;
+          home-manager.useUserPackages = true;
+          home-manager.users.craig = import ./home.nix;
+        }
       ];
       specialArgs = { inherit inputs; };
     };

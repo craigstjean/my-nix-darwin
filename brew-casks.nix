@@ -27,6 +27,7 @@ in
     "lm-studio"
     "claude"
     "drawio"
+    "mactex"
 
     "jetbrains-toolbox"
     "cursor"

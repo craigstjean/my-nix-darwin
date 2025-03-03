@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  npm = (pkgs.callPackage ./npm/default.nix {});
+in
 {
   imports = [
     ./emacs.nix
@@ -63,6 +66,7 @@
     pkgs.roboto
     pkgs.source-code-pro
     pkgs.nerd-fonts.ubuntu
+    pkgs.nerd-fonts.symbols-only
 
     # System Tools
     pkgs.bat
@@ -71,14 +75,17 @@
     pkgs.eza
     pkgs.fd
     pkgs.ffmpeg-full
+    pkgs.fontconfig
     pkgs.fzf
     pkgs.gitui
+    pkgs.gnuplot
     pkgs.graphviz-nox
     pkgs.kondo
     pkgs.mermaid-cli
     pkgs.imagemagick
     pkgs.jq
     pkgs.ngrok
+    pkgs.node2nix
     pkgs.nushell
     pkgs.ollama
     pkgs.pandoc
@@ -87,6 +94,7 @@
     pkgs.rlwrap
     pkgs.rustup
     pkgs.shellcheck
+    pkgs.shfmt
     pkgs.sqlite
     pkgs.stockfish
     pkgs.tmux
@@ -136,6 +144,12 @@
 
     # Misc
     pkgs.lua-language-server
+    pkgs.mermaid-cli
+    pkgs.nixfmt-classic
+
+    # Custom NPM
+    npm.marked
+    npm."@anthropic-ai/claude-code"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -179,3 +193,4 @@
   programs.home-manager.enable = true;
   programs.fish.enable = true;
 }
+
