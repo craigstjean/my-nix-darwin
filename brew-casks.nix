@@ -33,6 +33,7 @@ in
     "cursor"
 
     "microsoft-teams"
+    "discord"
 
     "deezer"
     "spotify"
