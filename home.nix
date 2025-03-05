@@ -184,13 +184,36 @@ in
   #  /etc/profiles/per-user/craig/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "emacs";
+    EDITOR = "nvim";
+    HOMEBREW_AUTO_UPDATE_SECS = "86400";
   };
 
   xdg.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+    '';
+    plugins = [
+      { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
+      { name = "z"; src = pkgs.fishPlugins.z.src; }
+      { name = "bobthefish"; src = pkgs.fishPlugins.bobthefish.src; }
+      {
+        name = "fishline";
+        src = pkgs.fetchFromGitHub {
+          owner = "0rax";
+          repo = "fishline";
+          rev = "v3.3.0";
+          sha256 = "sha256-NYKzHbrRjZ6xYQRw8tN7dl2ySkey8vr9dBegv+C2JEg=";
+        };
+      }
+    ];
+  };
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk;
+  };
 }
 
