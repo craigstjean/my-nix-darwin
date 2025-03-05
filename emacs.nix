@@ -5,7 +5,7 @@ let
   emacs-overlay = import (fetchTarball {
     url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
   });
-  my-emacs = pkgs.emacs29.override {
+  my-emacs = pkgs.emacs30.override {
     withNativeCompilation = true;
     withSQLite3 = true;
     withTreeSitter = true;
