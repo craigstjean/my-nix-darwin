@@ -103,7 +103,6 @@ in
     pkgs.virtualenv
     pkgs.wget
     pkgs.zellij
-    pkgs.zoxide
 
     # Go
     pkgs.go
@@ -192,8 +191,24 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fish = {
+  programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "candy";
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fish = {
+    # enable = true;
     interactiveShellInit = ''
     '';
     plugins = [
