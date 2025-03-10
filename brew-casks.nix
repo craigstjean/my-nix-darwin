@@ -15,6 +15,11 @@ in
     cleanup = "uninstall";
     upgrade = true;
   };
+  homebrew.brews = [
+    "libvterm"
+    "micromamba"
+    "mlx"
+  ];
   homebrew.casks = [
     "alfred"
     "bartender"
@@ -27,6 +32,7 @@ in
     "lm-studio"
     "claude"
     "drawio"
+    "excalidrawz"
     "mactex"
 
     "jetbrains-toolbox"
@@ -45,6 +51,9 @@ in
     "affinity-publisher"
 
     "steam"
+    "obs"
+
+    "miniconda"
   ];
 }
 

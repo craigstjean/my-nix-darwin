@@ -28,13 +28,6 @@ in
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = [
-    # not available for aarch64-darwin
-    #pkgs.libvterm
-    #pkgs.obs-studio
-
-    #pkgs.conda
-    #pkgs.micromamba
-
     # Essential
     pkgs.git
     pkgs.neovim
@@ -49,6 +42,7 @@ in
     pkgs.typescript
     pkgs.prisma
     pkgs.pnpm
+    pkgs.bun
     pkgs.deno
     pkgs.vue-language-server
     pkgs.typescript-language-server
@@ -145,6 +139,13 @@ in
     pkgs.lua-language-server
     pkgs.mermaid-cli
     pkgs.nixfmt-classic
+    pkgs.ollama
+    pkgs.llm
+
+    # Dev dependencies
+    pkgs.apple-sdk_15
+    pkgs.darwin.libresolv
+    pkgs.darwin.libresolvHeaders
 
     # Custom NPM
     npm.marked
@@ -185,7 +186,12 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     HOMEBREW_AUTO_UPDATE_SECS = "86400";
+    PATH="$PATH:$HOME/.local/bin";
   };
+
+  # program.zsh.interactiveShellInit = ''
+  #   source $HOME/System/nix/scripts/conda.sh
+  # '';
 
   xdg.enable = true;
 
@@ -195,9 +201,19 @@ in
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    shellAliases = {
+      # Add --color to ls for nix develop, which uses coreutils
+      ls = "ls -G --color";
+    };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [
+        "git"
+        "conda"
+      ];
+      extraConfig = ''
+        source $HOME/System/nix/scripts/conda.sh
+      '';
       theme = "candy";
     };
   };
@@ -226,9 +242,17 @@ in
       }
     ];
   };
+
   programs.java = {
     enable = true;
     package = pkgs.jdk;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 }
 
