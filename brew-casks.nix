@@ -26,6 +26,7 @@ in
     "rectangle-pro"
     "commander-one"
 
+    "obsidian"
     "bbedit"
     "sublime-text@dev"
     "beyond-compare"
