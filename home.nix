@@ -83,6 +83,7 @@ in
     pkgs.nushell
     pkgs.ollama
     pkgs.pandoc
+    pkgs.pdftk
     pkgs.qmk
     (pkgs.ripgrep.override { withPCRE2 = true; })
     pkgs.rlwrap
