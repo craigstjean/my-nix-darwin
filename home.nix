@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   npm = (pkgs.callPackage ./npm/default.nix {});
@@ -100,7 +100,8 @@ in
     pkgs.zellij
 
     # Go
-    pkgs.go
+    # Installing go with homebrew to avoid linking errors when building with go on Mac
+    # pkgs.go
     pkgs.air
     pkgs.golangci-lint
     pkgs.gore
@@ -135,6 +136,9 @@ in
 
     # Flutter / Dart
     pkgs.flutter
+    # ruby and gotools both provide `bundle`, so set ruby to high priority
+    (lib.hiPrio pkgs.ruby)
+    pkgs.cocoapods
 
     # Misc
     pkgs.lua-language-server

@@ -16,6 +16,7 @@ in
     upgrade = true;
   };
   homebrew.brews = [
+    "go"
     "libvterm"
     "micromamba"
     "mlx"
@@ -35,6 +36,7 @@ in
     "drawio"
     "excalidrawz"
     "mactex"
+    "hex-fiend"
 
     "jetbrains-toolbox"
     "cursor"
