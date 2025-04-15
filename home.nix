@@ -124,7 +124,7 @@ in
     pkgs.beam27Packages.elixir-ls
     pkgs.beam27Packages.erlang-ls
     pkgs.beam27Packages.rebar3
-    pkgs.erlang_nox
+    pkgs.beamMinimalPackages.erlang
 
     # .NET
     pkgs.dotnet-sdk_9
