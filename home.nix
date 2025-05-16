@@ -4,9 +4,9 @@ let
   npm = (pkgs.callPackage ./npm/default.nix {});
 in
 {
-  imports = [
-    ./emacs.nix
-  ];
+  # imports = [
+  #   ./emacs.nix
+  # ];
 
   nixpkgs = {
     config = {

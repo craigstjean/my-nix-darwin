@@ -15,11 +15,22 @@ in
     cleanup = "uninstall";
     upgrade = true;
   };
+  homebrew.taps = [
+    "d12frosted/homebrew-emacs-plus"
+  ];
   homebrew.brews = [
     "go"
     "libvterm"
     "micromamba"
     "mlx"
+
+    {
+      name = "d12frosted/emacs-plus/emacs-plus@30";
+      args = [
+        "with-imagemagick"
+        "with-modern-papirus-icon"
+      ];
+    }
   ];
   homebrew.casks = [
     "alfred"
