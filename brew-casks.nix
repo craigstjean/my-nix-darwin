@@ -9,6 +9,8 @@ in
     home = "/Users/craig";
   };
 
+  system.primaryUser = "craig";
+
   homebrew.enable = true;
   homebrew.onActivation = {
     autoUpdate = true;
