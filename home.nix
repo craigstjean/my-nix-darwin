@@ -38,9 +38,9 @@ in
     pkgs.nodePackages.prettier
     pkgs.stylelint
     pkgs.vscode-langservers-extracted
-    pkgs.nodePackages.vscode-json-languageserver
+    # pkgs.nodePackages.vscode-json-languageserver
     pkgs.typescript
-    pkgs.prisma
+    # pkgs.prisma
     pkgs.pnpm
     pkgs.bun
     pkgs.deno
@@ -113,21 +113,22 @@ in
     pkgs.mprocs
 
     # C++
-    pkgs.clang
-    pkgs.clang-tools
+    # pkgs.clang
+    # pkgs.clang-tools
     pkgs.cmake
     pkgs.cmake-language-server
     pkgs.ninja
 
     # Elixir
     pkgs.beam27Packages.elixir
-    pkgs.beam27Packages.elixir-ls
+    (lib.hiPrio pkgs.beam27Packages.elixir-ls)
     pkgs.beam27Packages.erlang-ls
     pkgs.beam27Packages.rebar3
     pkgs.beamMinimalPackages.erlang
 
     # .NET
     pkgs.dotnet-sdk_9
+    # pkgs.dotnet-sdk_8
 
     # Java
     pkgs.jdk
@@ -135,6 +136,7 @@ in
     pkgs.maven
 
     # Flutter / Dart
+    # (lib.hiPrio pkgs.flutter)
     pkgs.flutter
     # ruby and gotools both provide `bundle`, so set ruby to high priority
     (lib.hiPrio pkgs.ruby)
@@ -209,6 +211,7 @@ in
     shellAliases = {
       # Add --color to ls for nix develop, which uses coreutils
       ls = "ls -G --color";
+      gemini = "npx https://github.com/google-gemini/gemini-cli";
     };
     oh-my-zsh = {
       enable = true;

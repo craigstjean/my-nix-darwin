@@ -21,6 +21,7 @@ in
     "d12frosted/homebrew-emacs-plus"
   ];
   homebrew.brews = [
+    "llvm"
     "go"
     "libvterm"
     "micromamba"

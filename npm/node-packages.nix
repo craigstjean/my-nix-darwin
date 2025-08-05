@@ -9,10 +9,10 @@ in
   marked = nodeEnv.buildNodePackage {
     name = "marked";
     packageName = "marked";
-    version = "15.0.7";
+    version = "16.1.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/marked/-/marked-15.0.7.tgz";
-      sha512 = "dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg==";
+      url = "https://registry.npmjs.org/marked/-/marked-16.1.2.tgz";
+      sha512 = "rNQt5EvRinalby7zJZu/mB+BvaAY2oz3wCuCjt1RDrWNpS1Pdf9xqMOeC9Hm5adBdcV/3XZPJpG58eT+WBc0XQ==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -27,10 +27,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "0.2.29";
+    version = "1.0.68";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.29.tgz";
-      sha512 = "4lZbbg+Qqz+mY3SLKcUYjnOd6/PIB+SQh7ICVIXFYGB1zOB4mVfiY7l2nBt67iw+Rxko2wGJAfg6gPM57S/Q/g==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.68.tgz";
+      sha512 = "L3c73LgUjy3SM6Kkx3ny7docd+MIAQ6c1BA2Q17eXTd5gIa0VH5Fj+UPobfUmu69LPiO97iV6UOeHwiH9G7lNg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
